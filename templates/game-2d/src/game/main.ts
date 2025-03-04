@@ -16,7 +16,7 @@ const config: Phaser.Types.Core.GameConfig = {
     },
     title: GAME_INFO.name,
     scene: [
-        HomePage
+        HomePage,
     ],
     // Enhanced graphics settings
     pixelArt: false, // Set to true for pixel art games

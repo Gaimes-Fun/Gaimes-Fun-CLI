@@ -22,7 +22,7 @@ export default config({
          * Bind your custom express routes here:
          * Read more: https://expressjs.com/en/starter/basic-routing.html
          */
-        app.get("/hello_world", (req, res) => {
+        app.get("/api/hello_world", (req, res) => {
             res.send("It's time to kick ass and chew bubblegum!");
         });
 
@@ -39,7 +39,9 @@ export default config({
          * It is recommended to protect this route with a password
          * Read more: https://docs.colyseus.io/tools/monitor/#restrict-access-to-the-panel-using-a-password
          */
-        app.use("/monitor", monitor());
+        if (process.env.NODE_ENV !== "production") {
+            app.use("/monitor", monitor());
+        }
     },
 
 
