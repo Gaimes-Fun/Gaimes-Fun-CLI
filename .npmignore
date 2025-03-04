@@ -1,0 +1,31 @@
+# Source files
+src/
+
+# Development files
+.git/
+.github/
+.vscode/
+.idea/
+.DS_Store
+*.log
+tsconfig.json
+
+# Test files
+test/
+__tests__/
+*.test.ts
+*.spec.ts
+
+# Template node_modules and lock files
+templates/**/node_modules/
+templates/**/package-lock.json
+templates/**/yarn.lock
+templates/**/pnpm-lock.yaml
+
+# Scripts
+scripts/
+
+# Config files
+.eslintrc*
+.prettierrc*
+.editorconfig 

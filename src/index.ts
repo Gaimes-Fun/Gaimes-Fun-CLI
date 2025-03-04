@@ -17,9 +17,27 @@ program
 program
   .command('init')
   .description('Create a new project with server and UI folders')
-  .argument('<project-name>', 'Name of the project')
+  .argument('[project-name]', 'Name of the project (optional)')
   .option('-g, --game <type>', 'Game type (2d or 3d)')
   .action(async (projectName, options) => {
+    // If project name is not provided, ask the user
+    if (!projectName) {
+      const answers = await inquirer.prompt([
+        {
+          type: 'input',
+          name: 'projectName',
+          message: 'Enter a name for your project:',
+          default: 'my-maga-game',
+          validate: (input) => {
+            if (/^([A-Za-z\-_\d])+$/.test(input)) return true;
+            return 'Project name may only include letters, numbers, underscores and hashes.';
+          }
+        }
+      ]);
+      
+      projectName = answers.projectName;
+    }
+    
     console.log(chalk.blue(`Creating new project: ${projectName}`));
     
     // If game type is not specified, ask the user

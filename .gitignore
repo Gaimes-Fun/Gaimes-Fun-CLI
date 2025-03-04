@@ -6,6 +6,12 @@ yarn-error.log
 package-lock.json
 yarn.lock
 
+# Template dependencies
+templates/**/node_modules/
+templates/**/package-lock.json
+templates/**/yarn.lock
+templates/**/pnpm-lock.yaml
+
 # Build outputs
 dist/
 build/

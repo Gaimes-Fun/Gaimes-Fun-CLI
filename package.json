@@ -1,20 +1,47 @@
 {
-  "name": "maga-cli",
-  "version": "1.0.0",
+  "name": "maga-ai",
+  "version": "0.0.1-alpha.5",
   "description": "CLI tool to generate new projects from templates",
   "main": "dist/index.js",
   "bin": {
-    "maga": "./dist/index.js"
+    "maga-ai": "./dist/index.js"
   },
   "scripts": {
     "build": "tsc",
     "start": "ts-node src/index.ts",
     "dev": "ts-node src/index.ts",
-    "prepublishOnly": "npm run build"
+    "clean-templates": "node scripts/clean-templates.js",
+    "prepublishOnly": "npm run clean-templates && npm run build",
+    "version": "node scripts/version.js",
+    "release": "node scripts/publish.js",
+    "dry-run": "node scripts/publish.js -- --dry-run"
   },
-  "keywords": ["cli", "generator", "template", "typescript"],
-  "author": "",
+  "keywords": [
+    "cli",
+    "generator",
+    "template",
+    "typescript"
+  ],
+  "author": "MAGA AI",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maga-ai/maga-cli"
+  },
+  "homepage": "https://maga.ai",
+  "bugs": {
+    "url": "https://github.com/maga-ai/maga-cli/issues"
+  },
+  "files": [
+    "dist",
+    "templates",
+    ".gitattributes",
+    ".npmrc",
+    ".editorconfig"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "chalk": "^4.1.2",
     "commander": "^9.4.0",
@@ -25,7 +52,8 @@
     "@types/fs-extra": "^9.0.13",
     "@types/inquirer": "^8.2.1",
     "@types/node": "^18.7.13",
+    "lerna": "^8.2.1",
     "ts-node": "^10.9.1",
     "typescript": "^4.8.2"
   }
-} 
+}
