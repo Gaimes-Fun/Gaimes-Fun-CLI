@@ -17,11 +17,17 @@ export const PhaserGame = forwardRef<IRefPhaserGame, IProps>(function PhaserGame
 {
     const game = useRef<Phaser.Game | null>(null!);
 
+    // Define resize handler
+    const handleResize = () => {
+        if (game.current) {
+            game.current.scale.resize(window.innerWidth, window.innerHeight);
+        }
+    };
+
     useLayoutEffect(() =>
     {
         if (game.current === null)
         {
-
             game.current = StartGame("game-container");
 
             if (typeof ref === 'function')
@@ -32,10 +38,14 @@ export const PhaserGame = forwardRef<IRefPhaserGame, IProps>(function PhaserGame
                 ref.current = { game: game.current, scene: null };
             }
 
+            // Add resize event listener
+            window.addEventListener('resize', handleResize);
         }
 
         return () =>
         {
+            window.removeEventListener('resize', handleResize);
+            
             if (game.current)
             {
                 game.current.destroy(true);
@@ -53,9 +63,7 @@ export const PhaserGame = forwardRef<IRefPhaserGame, IProps>(function PhaserGame
         {
             if (currentActiveScene && typeof currentActiveScene === 'function')
             {
-
                 currentActiveScene(scene_instance);
-
             }
 
             if (typeof ref === 'function')
@@ -74,7 +82,6 @@ export const PhaserGame = forwardRef<IRefPhaserGame, IProps>(function PhaserGame
     }, [currentActiveScene, ref]);
 
     return (
-        <div id="game-container"></div>
+        <div id="game-container" className="fullscreen"></div>
     );
-
 });

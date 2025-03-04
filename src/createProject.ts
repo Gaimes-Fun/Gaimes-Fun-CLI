@@ -6,6 +6,7 @@ export async function createProject(
   projectTarget: string,
   templateName: string,
   askOverwrite: boolean = true,
+  customProjectName?: string,
 ): Promise<void> {
   // If projectTarget is a string, use it as the target directory
   // Otherwise, create a directory with the project name in the current directory
@@ -13,6 +14,8 @@ export async function createProject(
     ? projectTarget
     : path.join(process.cwd(), projectTarget);
 
+  // Use custom project name if provided, otherwise use directory name
+  const projectName = customProjectName || path.basename(projectDir);
   const templateDir = path.join(__dirname, '../templates', templateName);
 
   // Check if template exists
@@ -62,8 +65,16 @@ export async function createProject(
   const packageJsonPath = path.join(projectDir, 'package.json');
   if (await fs.pathExists(packageJsonPath)) {
     const packageJson = await fs.readJson(packageJsonPath);
-    packageJson.name = path.basename(projectDir);
+    packageJson.name = projectName;
     await fs.writeJson(packageJsonPath, packageJson, { spaces: 2 });
+  }
+
+  // Update GAME_INFO configuration with project name
+  const gameConfigPath = path.join(projectDir, 'src/configs/game.ts');
+  if (await fs.pathExists(gameConfigPath)) {
+    let gameConfigContent = await fs.readFile(gameConfigPath, 'utf8');
+    gameConfigContent = gameConfigContent.replace(/\{\{PROJECT_NAME\}\}/g, projectName);
+    await fs.writeFile(gameConfigPath, gameConfigContent, 'utf8');
   }
 
   console.log(chalk.green(`Template copied to ${projectDir}`));

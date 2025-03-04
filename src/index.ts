@@ -63,7 +63,7 @@ program
       const serverDir = path.join(projectDir, 'server');
       await fs.ensureDir(serverDir);
       console.log(chalk.blue(`Creating server folder...`));
-      await createProject(serverDir, 'server', false);
+      await createProject(serverDir, 'server', false, projectName);
 
       // Create UI directory and copy game template
       const uiDir = path.join(projectDir, 'ui');
@@ -71,7 +71,7 @@ program
 
       const gameTemplate = `game-${gameType}`;
       console.log(chalk.blue(`Creating UI folder with ${gameTemplate} template...`));
-      await createProject(uiDir, gameTemplate, false);
+      await createProject(uiDir, gameTemplate, false, projectName);
 
       // Create a root package.json for the project
       const rootPackageJson = {
