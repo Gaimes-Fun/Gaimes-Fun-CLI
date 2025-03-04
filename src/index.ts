@@ -59,6 +59,15 @@ program
       // Create the main project directory
       await fs.ensureDir(projectDir);
 
+      // Copy .cursor directory to root project if it exists
+      const cursorRulesDir = path.join(__dirname, '../templates/.cursor');
+      const projectCursorDir = path.join(projectDir, '.cursor');
+
+      if (await fs.pathExists(cursorRulesDir)) {
+        await fs.copy(cursorRulesDir, projectCursorDir);
+        console.log(chalk.blue(`Cursor rules copied to ${projectCursorDir}`));
+      }
+
       // Create server directory and copy server template
       const serverDir = path.join(projectDir, 'server');
       await fs.ensureDir(serverDir);

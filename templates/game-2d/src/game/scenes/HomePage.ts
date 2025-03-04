@@ -17,7 +17,7 @@ export class HomePage extends Scene
     preload ()
     {
         // Load assets
-        this.load.setPath('assets');
+        this.load.setPath('images');
         this.load.image('background', 'bg.png');
         this.load.image('star', 'star.png');
     }

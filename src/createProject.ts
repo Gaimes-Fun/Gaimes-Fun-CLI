@@ -30,29 +30,37 @@ async function createGitignore(projectDir: string, templateName: string): Promis
     '*.njsproj',
     '*.sln',
     '*.sw?',
-    '',
+    '# Environment variables',
+    '.env',
+    '!.env.example',
   ];
 
   // Template-specific patterns
   let templatePatterns: string[] = [];
 
   if (templateName === 'server') {
-    templatePatterns = [
-      '# Server-specific',
-      'dist',
-      'build',
-      'coverage',
-      '.env',
-      '.env.*',
-      '!.env.*.sample',
-      '',
-    ];
+    templatePatterns = ['# Server-specific', 'dist', 'build', 'coverage', ''];
   } else if (templateName.startsWith('game-')) {
     templatePatterns = ['# Game-specific', 'dist', 'build', 'dist-ssr', '*.local', ''];
   }
 
   const gitignoreContent = [...commonPatterns, ...templatePatterns].join('\n');
   await fs.writeFile(gitignorePath, gitignoreContent);
+}
+
+/**
+ * Creates a .env file by copying .env.example if it exists
+ */
+async function createEnvFile(projectDir: string): Promise<void> {
+  const envExamplePath = path.join(projectDir, '.env.example');
+  const envPath = path.join(projectDir, '.env');
+
+  // Check if .env.example exists
+  if (await fs.pathExists(envExamplePath)) {
+    // Copy .env.example to .env
+    await fs.copy(envExamplePath, envPath);
+    console.log(chalk.blue(`Created .env file from .env.example in ${projectDir}`));
+  }
 }
 
 export async function createProject(
@@ -116,6 +124,9 @@ export async function createProject(
 
   // Create appropriate .gitignore file
   await createGitignore(projectDir, templateName);
+
+  // Create .env file from .env.example if it exists
+  await createEnvFile(projectDir);
 
   // Update package.json with project name
   const packageJsonPath = path.join(projectDir, 'package.json');
