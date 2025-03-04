@@ -1,4 +1,4 @@
-import { GameObjects, Scene, Scale } from 'phaser';
+import { GameObjects, Scene } from 'phaser';
 import { EventBus } from '../EventBus';
 import { GAME_INFO } from '../../configs/game';
 

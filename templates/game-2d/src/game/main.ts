@@ -17,7 +17,25 @@ const config: Phaser.Types.Core.GameConfig = {
     title: GAME_INFO.name,
     scene: [
         HomePage
-    ]
+    ],
+    // Enhanced graphics settings
+    pixelArt: false, // Set to true for pixel art games
+    roundPixels: false, // Prevents pixel interpolation for pixel art
+    antialias: true, // Enables anti-aliasing for smoother graphics
+    antialiasGL: true, // WebGL specific anti-aliasing
+    desynchronized: true, // Reduces input lag
+    physics: {
+        default: 'arcade',
+        arcade: {
+            debug: false,
+            fps: 60
+        }
+    },
+    render: {
+        transparent: false,
+        clearBeforeRender: true,
+        powerPreference: 'high-performance'
+    }
 };
 
 const StartGame = (parent: string) => {
