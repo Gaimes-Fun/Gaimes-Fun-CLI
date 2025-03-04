@@ -1,0 +1,7 @@
+---
+description: Activate rule when update UI logic
+globs: ui/src/**/*
+---
+# UI:
+- DO NOT change logic in file ui/index.html and ui/src/main.tsx
+- DO NOT use react component and hooks

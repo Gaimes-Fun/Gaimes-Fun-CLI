@@ -1,12 +1,10 @@
 ---
-description: Enforce UI project structure standards when creating or updating files
-globs: ui/src/*
+description: Enforce server project structure standards when creating or updating files
+globs: server/src/*
 ---
 # The project structure:
   - `src/types`: TypeScript definitions.
   - `src/utils`: Utility functions.
-  - `src/game`: Phaser game logic.
-  - `src/game/scenes`: Define scene in game.
-  - `src/configs`: Config for project.
-  - `public/images`: Textures, images.
-  - `public/sounds`: Audio files.
+  - `src/rooms`: Define Room.
+  - `src/rooms/schema`: Define Schema of Room.
+  - `src/services`: Service logic
