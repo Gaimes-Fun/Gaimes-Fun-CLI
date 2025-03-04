@@ -91,6 +91,44 @@ program
 
       await fs.writeJson(path.join(projectDir, 'package.json'), rootPackageJson, { spaces: 2 });
 
+      // Create a root-level .gitignore file
+      const rootGitignoreContent = `# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependencies
+node_modules
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Project specific
+server/dist
+server/coverage
+server/.env
+server/.env.*
+!server/.env.*.sample
+
+ui/dist
+ui/dist-ssr
+ui/*.local
+`;
+
+      await fs.writeFile(path.join(projectDir, '.gitignore'), rootGitignoreContent);
+
       // Create a README.md for the project
       const readmeContent = `# ${projectName}
 

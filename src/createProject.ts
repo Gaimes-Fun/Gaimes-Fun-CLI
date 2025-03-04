@@ -2,6 +2,59 @@ import fs from 'fs-extra';
 import path from 'path';
 import chalk from 'chalk';
 
+// Function to create a gitignore file with appropriate content
+async function createGitignore(projectDir: string, templateName: string): Promise<void> {
+  const gitignorePath = path.join(projectDir, '.gitignore');
+
+  // Common gitignore patterns
+  const commonPatterns = [
+    '# Logs',
+    'logs',
+    '*.log',
+    'npm-debug.log*',
+    'yarn-debug.log*',
+    'yarn-error.log*',
+    'pnpm-debug.log*',
+    'lerna-debug.log*',
+    '',
+    '# Dependencies',
+    'node_modules',
+    '',
+    '# Editor directories and files',
+    '.vscode/*',
+    '!.vscode/extensions.json',
+    '.idea',
+    '.DS_Store',
+    '*.suo',
+    '*.ntvs*',
+    '*.njsproj',
+    '*.sln',
+    '*.sw?',
+    '',
+  ];
+
+  // Template-specific patterns
+  let templatePatterns: string[] = [];
+
+  if (templateName === 'server') {
+    templatePatterns = [
+      '# Server-specific',
+      'dist',
+      'build',
+      'coverage',
+      '.env',
+      '.env.*',
+      '!.env.*.sample',
+      '',
+    ];
+  } else if (templateName.startsWith('game-')) {
+    templatePatterns = ['# Game-specific', 'dist', 'build', 'dist-ssr', '*.local', ''];
+  }
+
+  const gitignoreContent = [...commonPatterns, ...templatePatterns].join('\n');
+  await fs.writeFile(gitignorePath, gitignoreContent);
+}
+
 export async function createProject(
   projectTarget: string,
   templateName: string,
@@ -60,6 +113,9 @@ export async function createProject(
 
   // Copy template to project directory
   await fs.copy(templateDir, projectDir);
+
+  // Create appropriate .gitignore file
+  await createGitignore(projectDir, templateName);
 
   // Update package.json with project name
   const packageJsonPath = path.join(projectDir, 'package.json');
