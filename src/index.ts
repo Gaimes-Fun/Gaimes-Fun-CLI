@@ -127,11 +127,14 @@ node_modules
 # Project specific
 server/dist
 server/coverage
+server/build
 server/.env
-server/.env.*
-!server/.env.*.sample
+!server/.env.example
 
 ui/dist
+ui/build
+ui/.env
+!ui/.env.example
 ui/dist-ssr
 ui/*.local
 `;

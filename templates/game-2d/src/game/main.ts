@@ -12,7 +12,9 @@ const config: Phaser.Types.Core.GameConfig = {
     backgroundColor: '#028af8',
     scale: {
         mode: Scale.RESIZE,
-        autoCenter: Scale.CENTER_BOTH
+        autoCenter: Scale.CENTER_BOTH,
+        width: window.innerWidth*window.devicePixelRatio,
+        height: window.innerHeight*window.devicePixelRatio
     },
     title: GAME_INFO.name,
     scene: [
@@ -28,13 +30,20 @@ const config: Phaser.Types.Core.GameConfig = {
         default: 'arcade',
         arcade: {
             debug: false,
-            fps: 60
+            fps: 120
         }
+    },
+    dom: {
+        createContainer: true
     },
     render: {
         transparent: false,
         clearBeforeRender: true,
         powerPreference: 'high-performance'
+    },
+    fps: {
+        target: 120,  // Target 120 FPS
+        forceSetTimeOut: false
     }
 };
 
