@@ -151,6 +151,7 @@ Example prompts for Cursor:
    ```bash
    npm run dev
    ```
+   Visit [http://localhost:8080](http://localhost:8080) to see your game.
 
 2. **Debug issues** using Cursor:
    - If you encounter errors, copy the error message
