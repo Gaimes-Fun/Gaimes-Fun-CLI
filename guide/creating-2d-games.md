@@ -154,18 +154,24 @@ Example prompts for Cursor:
    Visit [http://localhost:8080](http://localhost:8080) to see your game.
 
 2. **Debug issues** using Cursor:
-   - If you encounter errors, copy the error message
+   - Check for errors in two places:
+     - **Terminal**: Monitor the terminal where you ran `npm run dev` for build errors and server messages
+     - **Browser Console**: Press F12 or right-click → Inspect → Console to check for runtime errors
+   - Copy the complete error message from either source
    - Open the Composer tab in Cursor
-   - Paste the error message and ask for help
-   - Follow Cursor's suggestions to fix the issue
+   - Paste the error message and ask for a solution (e.g., "How can I fix this error?")
+   - Implement Cursor's suggested fixes
+   - Test your game again to verify the issue is resolved
+
+   Cursor's AI can analyze error messages, identify the root cause, and provide targeted solutions for common game development issues.
 
 ## Deploying Your Game
 
 To deploy your game to production:
 
-1. **Create a GitHub repository** for your game.
-
-2. **Push your code** to the repository:
+1. Create github account if you don't have one.
+2. Create github repository for your game.
+3. Push your code to the repository:
 
    ```bash
    git init
