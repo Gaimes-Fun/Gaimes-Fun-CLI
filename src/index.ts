@@ -5,6 +5,7 @@ import chalk from 'chalk';
 import inquirer from 'inquirer';
 import fs from 'fs-extra';
 import path from 'path';
+import { execSync } from 'child_process';
 import { createProject } from './createProject';
 
 const program = new Command();
@@ -166,10 +167,34 @@ This project contains both server and UI components.
 
       await fs.writeFile(path.join(projectDir, 'README.md'), readmeContent);
 
+      // Copy the game-design.md template to the project root
+      const gameDesignTemplatePath = path.join(__dirname, '../templates/game-design.md');
+      const projectGameDesignPath = path.join(projectDir, 'game-design.md');
+
+      if (await fs.pathExists(gameDesignTemplatePath)) {
+        await fs.copy(gameDesignTemplatePath, projectGameDesignPath);
+        console.log(chalk.blue(`Game design document template copied to ${projectGameDesignPath}`));
+      }
+
       console.log(chalk.green(`✅ Project ${projectName} created successfully!`));
-      console.log(chalk.yellow(`To get started:`));
+
+      // Run npm run install:all command
+      console.log(chalk.blue(`Installing dependencies...`));
+      try {
+        execSync('npm run install:all', {
+          cwd: projectDir,
+          stdio: 'inherit',
+        });
+        console.log(chalk.green(`✅ Dependencies installed successfully!`));
+      } catch (error) {
+        console.error(chalk.red(`Failed to install dependencies:`), error);
+        console.log(chalk.yellow(`You can install dependencies manually by running:`));
+        console.log(chalk.white(`  cd ${projectName}`));
+        console.log(chalk.white(`  npm run install:all`));
+      }
+
+      console.log(chalk.yellow(`To start the development servers:`));
       console.log(chalk.white(`  cd ${projectName}`));
-      console.log(chalk.white(`  npm run install:all`));
       console.log(chalk.white(`  npm run dev`));
     } catch (error) {
       console.error(chalk.red('Failed to create project:'), error);
