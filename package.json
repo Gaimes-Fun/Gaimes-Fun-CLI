@@ -1,6 +1,6 @@
 {
   "name": "maga-ai",
-  "version": "0.0.2-alpha.3",
+  "version": "0.0.3-alpha.1",
   "description": "Create 2D and 3D Games with AI-Powered Technology",
   "main": "dist/index.js",
   "bin": {
