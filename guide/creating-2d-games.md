@@ -7,7 +7,6 @@ This guide will walk you through the process of creating a 2D game using the MAG
 - [Creating 2D Games with MAGA AI](#creating-2d-games-with-maga-ai)
   - [Table of Contents](#table-of-contents)
   - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
   - [Creating a New 2D Game Project](#creating-a-new-2d-game-project)
   - [Running Your Game](#running-your-game)
   - [Game Idea](#game-idea)
@@ -30,26 +29,12 @@ Before you begin, make sure you have the following installed:
 - Basic knowledge of JavaScript/TypeScript
 - Basic understanding of game development concepts
 
-## Installation
-
-First, you need to install the MAGA CLI globally:
-
-```bash
-npm install -g maga-ai
-```
-
-Or if you prefer using pnpm:
-
-```bash
-pnpm add -g maga-ai
-```
-
 ## Creating a New 2D Game Project
 
 To create a new 2D game project, run the following command:
 
 ```bash
-maga-ai init my-2d-game
+npx maga-ai@latest init my-2d-game
 ```
 
 When prompted, select the "2D Game" template. This will create a new directory with the name you specified, containing all the necessary files to start developing your 2D game.
