@@ -169,9 +169,16 @@ Example prompts for Cursor:
 
 To deploy your game to production:
 
-1. Create github account if you don't have one.
-2. Create github repository for your game.
-3. Push your code to the repository:
+1. **Create a GitHub account** if you don't have one at [GitHub.com](https://github.com/).
+
+2. **Create a new GitHub repository** for your game:
+   - Go to [GitHub.com](https://github.com/) and sign in
+   - Click the "+" icon in the top-right corner and select "New repository"
+   - Name your repository (e.g., "my-2d-game")
+   - Choose public visibility
+   - Click "Create repository"
+
+3. **Push your code** to the repository:
 
    ```bash
    git init
@@ -180,10 +187,20 @@ To deploy your game to production:
    git remote add origin <your-repository-url>
    git push -u origin main
    ```
-3. Visit [https://maga.ai/deploy](https://maga.ai/deploy) and connect your GitHub repository.
-4. Click on the 'Deploy' button.
-5. Wait for the deployment to complete.
-6. You will receive a link to your game.
+   Replace `<your-repository-url>` with your actual repository URL (e.g., `https://github.com/username/my-2d-game.git`).
+
+4. **Deploy your game**:
+   - Visit [https://maga.ai/deploy](https://maga.ai/deploy)
+   - Connect your GitHub repository when prompted
+   - Click the "Deploy" button
+   - Wait for the deployment process to complete
+
+5. **Access your game**:
+   - Once deployment is successful, you'll receive a unique URL
+   - Share this URL with others to let them play your game
+   - Your game is now live on the web!
+
+The deployment process automatically optimizes your game for production, ensuring fast loading times and smooth gameplay for your users.
 
 ## Advanced Topics
 
