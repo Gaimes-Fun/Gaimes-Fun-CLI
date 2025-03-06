@@ -7,6 +7,9 @@ This guide will walk you through the process of creating a 2D game using the MAG
 - [Creating 2D Games with MAGA AI](#creating-2d-games-with-maga-ai)
   - [Table of Contents](#table-of-contents)
   - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+    - [Install Node.js](#install-nodejs)
+    - [Install Cursor](#install-cursor)
   - [Creating a New 2D Game Project](#creating-a-new-2d-game-project)
   - [Running Your Game](#running-your-game)
   - [Game Idea](#game-idea)
@@ -23,11 +26,22 @@ This guide will walk you through the process of creating a 2D game using the MAG
 
 Before you begin, make sure you have the following installed:
 
-- [Node.js](https://nodejs.org/) (v14 or higher)
+- You know how to use terminal or command line [MacOs Tutorial](https://www.youtube.com/watch?v=FfT8OfMpARM), [Windows Tutorial](https://www.youtube.com/watch?v=jO4dbUnfRlU). 
+- [Node.js](https://nodejs.org/) (v16 or higher)
 - [npm](https://www.npmjs.com/) or [pnpm](https://pnpm.io/) (recommended)
 - [Cursor](https://cursor.com/) (the world's best AI-powered code editor)
 - Basic knowledge of JavaScript/TypeScript
 - Basic understanding of game development concepts
+
+## Installation
+
+### Install Node.js
+
+You can install Node.js from [here](https://nodejs.org/en/download/).
+
+### Install Cursor
+
+You can install Cursor from [here](https://cursor.com/).
 
 ## Creating a New 2D Game Project
 
@@ -60,6 +74,8 @@ To run your game in development mode, use the following command:
 ```bash
 npm run dev
 ```
+
+You can visit [http://localhost:8080](http://localhost:8080) to see your game.
 
 This will start a local development server and open your game in the browser. The development server includes hot-reloading, so any changes you make to your code will automatically be reflected in the browser.
 
