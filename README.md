@@ -59,6 +59,8 @@ For a comprehensive guide on creating 2D games with MAGA AI, check out our [Crea
 
 Follow this guide to quickly get started with 2D game development using MAGA AI!
 
+## How to create 2D games with MAGA AI (Coming Soon)
+
 ## Documentation
 
 For full documentation, visit [our documentation site](https://docs.maga.ai).
