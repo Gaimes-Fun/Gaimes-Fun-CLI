@@ -27,7 +27,7 @@ This guide will walk you through the process of creating a 2D game using the MAG
 
 Before you begin, make sure you have the following installed:
 
-- You know how to use terminal or command line [MacOs Tutorial](https://www.youtube.com/watch?v=FfT8OfMpARM), [Windows Tutorial](https://www.youtube.com/watch?v=jO4dbUnfRlU). 
+- You know how to use terminal or command line [MacOS Tutorial](https://www.youtube.com/watch?v=FfT8OfMpARM), [Windows Tutorial](https://www.youtube.com/watch?v=jO4dbUnfRlU). 
 - [Node.js](https://nodejs.org/) (v16 or higher)
 - [npm](https://www.npmjs.com/) or [pnpm](https://pnpm.io/) (recommended)
 - [Cursor](https://cursor.com/) (the world's best AI-powered code editor)
