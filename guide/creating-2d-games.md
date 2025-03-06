@@ -10,6 +10,7 @@ This guide will walk you through the process of creating a 2D game using the MAG
   - [Installation](#installation)
     - [Install Node.js](#install-nodejs)
     - [Install Cursor](#install-cursor)
+    - [Install pnpm](#install-pnpm)
   - [Creating a New 2D Game Project](#creating-a-new-2d-game-project)
   - [Running Your Game](#running-your-game)
   - [Game Idea](#game-idea)
@@ -42,6 +43,12 @@ You can install Node.js from [here](https://nodejs.org/en/download/).
 ### Install Cursor
 
 You can install Cursor from [here](https://cursor.com/).
+
+### Install pnpm
+
+```
+npm install -g pnpm@latest-10
+```
 
 ## Creating a New 2D Game Project
 
