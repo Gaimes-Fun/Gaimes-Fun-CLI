@@ -8,7 +8,7 @@ const os = require('os');
 
 module.exports = {
   apps : [{
-    name: "maga-server",
+    name: "gaimes-server",
     script: 'build/index.js',
     time: true,
     watch: false,

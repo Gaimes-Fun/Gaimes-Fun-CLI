@@ -1,5 +1,5 @@
 export const GAME_INFO = {
-    author: 'Maga AI',
+    author: 'Gaimes Fun',
     name: '{{PROJECT_NAME}}',
-    description: 'Start your game development journey with Maga AI Game Platform',
+    description: 'Start your game development journey with Gaimes Fun Game Platform',
 }

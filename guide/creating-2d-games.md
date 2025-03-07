@@ -1,10 +1,10 @@
-# Creating 2D Games with MAGA AI
+# Creating 2D Games with GAIMES FUN
 
-This guide will walk you through the process of creating a 2D game using the MAGA CLI tool. The MAGA CLI provides a powerful template based on Phaser 3, React, and TypeScript to help you quickly start building your own 2D games.
+This guide will walk you through the process of creating a 2D game using the GAIMES CLI tool. The GAIMES CLI provides a powerful template based on Phaser 3, React, and TypeScript to help you quickly start building your own 2D games.
 
 ## Table of Contents
 
-- [Creating 2D Games with MAGA AI](#creating-2d-games-with-maga-ai)
+- [Creating 2D Games with GAIMES FUN](#creating-2d-games-with-gaimes-fun)
   - [Table of Contents](#table-of-contents)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
@@ -53,7 +53,7 @@ npm install -g pnpm@latest-10
 To create a new 2D game project, run the following command:
 
 ```bash
-npx maga-ai@latest init my-2d-game
+npx gaimes-fun@latest init my-2d-game
 ```
 
 When prompted, select the "2D Game" template. This will create a new directory with the name you specified, containing all the necessary files to start developing your 2D game.
@@ -193,7 +193,7 @@ To deploy your game to production:
    Replace `<your-repository-url>` with your actual repository URL (e.g., `https://github.com/username/my-2d-game.git`).
 
 4. **Deploy your game**:
-   - Visit [https://maga.ai/deploy](https://maga.ai/deploy)
+   - Visit [https://gaimes.fun/deploy](https://gaimes.fun/deploy)
    - Connect your GitHub repository when prompted
    - Click the "Deploy" button
    - Wait for the deployment process to complete
@@ -212,10 +212,10 @@ The deployment process automatically optimizes your game for production, ensurin
 You want to have a good collection of assets for your game.
 
 1. You can visit open source asset sites like [Itch.io](https://itch.io/game-assets), [OpenGameArt](https://opengameart.org/), [GameDevMarket](https://www.gamedevmarket.net/), [CraftPix](https://craftpix.net/), search for assets for your game and download them.
-2. Because you download PNG files, you need to convert them to spritesheets. You can download tools like [Spritesheet Splitter](https://github.com/Maga-AI/Spritesheet-Splitter/releases).
+2. Because you download PNG files, you need to convert them to spritesheets. You can download tools like [Spritesheet Splitter](https://github.com/gaimes-fun/Spritesheet-Splitter/releases).
 
 ### Sound Effects
 
 You can download sound effects from [Itch.io](https://itch.io/game-assets/tag-sound-effects) or [GameDevMarket](https://www.gamedevmarket.net/category/audio/sound-fx).
 
-Happy game development with MAGA.AI! 
+Happy game development with GAIMES.FUN! 

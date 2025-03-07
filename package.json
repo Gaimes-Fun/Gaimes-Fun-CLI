@@ -1,10 +1,10 @@
 {
-  "name": "maga-ai",
-  "version": "0.0.7-alpha.0",
+  "name": "gaimes-fun",
+  "version": "0.0.8-alpha.0",
   "description": "Create 2D and 3D Games with AI-Powered Technology",
   "main": "dist/index.js",
   "bin": {
-    "maga-ai": "./dist/index.js"
+    "gaimes-fun": "./dist/index.js"
   },
   "scripts": {
     "build": "tsc",
@@ -25,15 +25,15 @@
     "template",
     "typescript"
   ],
-  "author": "MAGA AI",
+  "author": "GAIMES FUN",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/maga-ai/maga-cli"
+    "url": "https://github.com/gaimes-fun/gaimes-fun-cli"
   },
-  "homepage": "https://maga.ai",
+  "homepage": "https://gaimes.fun",
   "bugs": {
-    "url": "https://github.com/maga-ai/maga-cli/issues"
+    "url": "https://github.com/gaimes-fun/gaimes-fun-cli/issues"
   },
   "files": [
     "dist",

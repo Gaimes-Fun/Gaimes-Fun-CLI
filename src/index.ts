@@ -10,7 +10,7 @@ import { createProject } from './createProject';
 
 const program = new Command();
 
-program.name('maga').description('CLI to bootstrap projects from templates').version('1.0.0');
+program.name('gaimes-fun').description('CLI to bootstrap projects from templates').version('1.0.0');
 
 program
   .command('init')
@@ -25,7 +25,7 @@ program
           type: 'input',
           name: 'projectName',
           message: 'Enter a name for your project:',
-          default: 'my-maga-game',
+          default: 'my-gaimes-game',
           validate: input => {
             if (/^([A-Za-z\-_\d])+$/.test(input)) return true;
             return 'Project name may only include letters, numbers, underscores and hashes.';
