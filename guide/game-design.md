@@ -48,18 +48,7 @@ This document will help you create a comprehensive game design document for your
 - Sound effects approach
 - Voice acting requirements (if any)
 
-### 4. Technical Specifications
-
-**Resolution**: [e.g., 1920x1080, responsive]
-
-**Performance Targets**: [FPS, device requirements]
-
-**Key Technologies**:
-- Phaser 3
-- React
-- Other libraries or frameworks
-
-### 5. Monetization (if applicable)
+### 4. Monetization (if a12pplicable)
 
 **Business Model**: [Free-to-play, premium, freemium]
 

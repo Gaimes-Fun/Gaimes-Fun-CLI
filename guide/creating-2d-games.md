@@ -13,8 +13,6 @@ This guide will walk you through the process of creating a 2D game using the MAG
     - [Install pnpm](#install-pnpm)
   - [Creating a New 2D Game Project](#creating-a-new-2d-game-project)
   - [Running Your Game](#running-your-game)
-  - [Game Idea](#game-idea)
-    - [Example AI Prompts for Game Design](#example-ai-prompts-for-game-design)
   - [Building Your Game with Cursor](#building-your-game-with-cursor)
     - [Generate Code with Cursor](#generate-code-with-cursor)
     - [Testing and Debugging](#testing-and-debugging)
@@ -86,7 +84,7 @@ You can visit [http://localhost:8080](http://localhost:8080) to see your game.
 
 This will start a local development server and open your game in the browser. The development server includes hot-reloading, so any changes you make to your code will automatically be reflected in the browser.
 
-## Game Idea
+<!-- ## Game Idea
 
 Before diving into the technical aspects of game development, it's important to have a clear game idea and design document. This will serve as your roadmap throughout the development process.
 
@@ -123,7 +121,7 @@ Here are some example prompts you can use with AI tools to help develop your gam
 
 7. "What are some effective ways to tutorialize the mechanics of my game without explicit text instructions?"
 
-Remember that while AI can provide valuable suggestions and inspiration, the final creative decisions should be yours. Use AI as a collaborative tool to enhance your creativity, not replace it.
+Remember that while AI can provide valuable suggestions and inspiration, the final creative decisions should be yours. Use AI as a collaborative tool to enhance your creativity, not replace it. -->
 
 ## Building Your Game with Cursor
 
@@ -131,18 +129,23 @@ Remember that while AI can provide valuable suggestions and inspiration, the fin
 
 Cursor is a powerful AI-powered code editor that can help you build your game. It uses AI to suggest code, fix bugs, and even write entire functions for you.
 
-1. Open the game folder in Cursor and start coding.
-2. Wait 2-3 minutes for Cursor to index the project.
-3. Select 'Composer' tab in Cursor.
-4. Add file `game-design.md` to context by clicking on the `+` button in the bottom left corner of Cursor and selecting `Add context`.
-5. Ask Cursor to help you build your game.
-   
-Note: Sometimes Cursor generates code that's too long, so you can ask 'Show more' to see the full code.
+1. **Open your project** in Cursor and wait 2-3 minutes for the project to be fully indexed.
 
-Example prompts for Cursor:
-- "Create a new scene for my game that implements a platformer level"
-- "Help me implement player movement with keyboard controls"
-- "Write a collision detection system for my game"
+2. **Access the Composer tab** by clicking on "Composer" in the left sidebar.
+
+<!-- 3. **Add context** to help Cursor understand your project:
+   - Click the "+" button in the bottom left corner of the Composer panel
+   - Select "Add context"
+   - Choose your `game-design.md` file to provide Cursor with your game concept -->
+
+3. **Write clear prompts** to generate code. For example:
+   - "Write code for a real-time multiplayer snake game. Players control a snake that grows longer by eating glowing orbs while avoiding collisions with other players. The game should have smooth movement, a dynamic leaderboard, and WebSocket-based multiplayer support. Implement real-time physics for snake movement, player interactions, and food spawning. Optimize performance with interpolation for smooth animations and efficient server-client communication. Include UI elements like score tracking, player rankings, and customizable snake skins."
+
+4. **Generate code** by pressing Ctrl+Enter (Windows/Linux) or Command+Enter (macOS).
+
+5. **Review and refine** the generated code before implementing it in your project.
+
+**Pro Tip**: If Cursor generates a response that's too long, type "Show more" to see the complete code. You can also ask follow-up questions to refine the generated code or request explanations for how it works.
 
 ### Testing and Debugging
 
